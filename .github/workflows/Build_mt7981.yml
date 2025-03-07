@@ -216,12 +216,13 @@ jobs:
           ${{ env.FIRMWARE }}/*sysupgrade.bin
           ImmortalWrt/build.config
 
-    - name: Remove old Releases
+    - name: Remove old Releases and Workflows
       uses: ophub/delete-releases-workflows@main
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         delete_releases: true
         releases_keep_latest: 5
+        delete_tags: true
         delete_workflows: true
         workflows_keep_day: 10
         gh_token: ${{ github.token }}
