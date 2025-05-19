@@ -10,33 +10,37 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# golang 1.24.x
+# OpenWrt golang latest version
 rm -rfv feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 
 # remove v2ray-geodata package from feeds (openwrt-22.03 & master)
 rm -rfv feeds/packages/net/v2ray-geodata
-git clone https://github.com/Ljzkirito/v2ray-geodata feeds/packages/net/v2ray-geodata
 rm -rfv feeds/packages/net/mosdns
 find ./ | grep Makefile | grep luci-app-mosdns | xargs rm -fv
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Replace Smartdns
-./scripts/feeds uninstall luci-app-smartdns smartdns
-./scripts/feeds install -a -p customsd
+#./scripts/feeds uninstall luci-app-smartdns smartdns
+#./scripts/feeds install -a -p customsd
 
 # Replace luci-app-ssr-plus & Depends
-Replace_package="xray-core xray-plugin v2ray-core v2ray-plugin hysteria ipt2socks microsocks redsocks2 chinadns-ng dns2socks dns2tcp naiveproxy simple-obfs tcping tuic-client luci-app-ssr-plus"
+Replace_package="xray-core xray-plugin v2ray-core v2ray-plugin v2raya hysteria ipt2socks microsocks redsocks2 chinadns-ng dns2socks dns2tcp dnsproxy naiveproxy simple-obfs tcping tuic-client luci-app-ssr-plus lua-neturl gn trojan"
 ./scripts/feeds uninstall ${Replace_package}
 ./scripts/feeds install -f -p helloworld ${Replace_package}
 
 # Replace shadowsocks-rust
-rm -rfv feeds/packages/net/shadowsocks-rust
-git clone https://github.com/Ljzkirito/shadowsocks-rust feeds/packages/net/shadowsocks-rust
+rm -fv feeds/packages/net/shadowsocks-rust/Makefile
+curl -L https://github.com/sbwml/openwrt_helloworld/raw/refs/heads/v5/shadowsocks-rust/Makefile -o feeds/packages/net/shadowsocks-rust/Makefile
 
 # Replace adguardhome
-rm -rfv feeds/packages/net/adguardhome
-git clone https://github.com/Ljzkirito/adguardhome-openwrt feeds/packages/net/adguardhome
+#rm -rfv feeds/packages/net/adguardhome
+#git clone https://github.com/Ljzkirito/adguardhome-openwrt feeds/packages/net/adguardhome
+
+# Replace luci-theme-argon
+rm -rfv feeds/luci/themes/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 
