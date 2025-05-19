@@ -44,8 +44,9 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/lu
 
 # Replace natmap
 rm -rfv feeds/packages/net/natmap
-git clone --depth 1 https://github.com/muink/openwrt-natmapt package/natmapt
-git clone --depth 1 https://github.com/muink/luci-app-natmapt package/luci-app-natmapt
+git clone --depth 1 https://github.com/muink/openwrt-natmapt.git package/natmapt
+git clone --depth 1 https://github.com/muink/openwrt-stuntman.git package/stuntman
+git clone --depth 1 https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
 # Remove dns2socks-rust & v2raya
 rm -rfv feeds/helloworld/dns2socks-rust
