@@ -22,7 +22,7 @@ make menuconfig
 make defconfig
 ./scripts/diffconfig.sh > seed.config
 ```
-进入目录`\\wsl$\Ubuntu*\home\*\immortalwrtARM`复制一下这个`seed.config`的文本内容到项目根目录的`.config`文件中，方便查看修改。
+进入目录`\\wsl$\Ubuntu*\home\*\immortalwrt-mt798x`复制一下这个`seed.config`的文本内容到项目根目录的`.config`文件中，方便查看修改。
 - 差分文件seed.config[参考来源](https://github.com/coolsnowwolf/lede/issues/2288)
 
 
