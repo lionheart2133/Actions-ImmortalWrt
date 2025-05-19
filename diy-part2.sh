@@ -26,7 +26,7 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 #./scripts/feeds install -a -p customsd
 
 # Replace luci-app-ssr-plus & Depends
-Replace_package="xray-core xray-plugin v2ray-core v2ray-plugin v2raya hysteria ipt2socks microsocks redsocks2 chinadns-ng dns2socks dns2tcp dnsproxy naiveproxy simple-obfs tcping tuic-client luci-app-ssr-plus lua-neturl gn trojan"
+Replace_package="xray-core xray-plugin v2ray-core v2ray-plugin hysteria ipt2socks microsocks redsocks2 chinadns-ng dns2socks dns2tcp dnsproxy naiveproxy simple-obfs tcping tuic-client luci-app-ssr-plus lua-neturl gn trojan"
 ./scripts/feeds uninstall ${Replace_package}
 ./scripts/feeds install -f -p helloworld ${Replace_package}
 
@@ -41,6 +41,15 @@ curl -L https://github.com/sbwml/openwrt_helloworld/raw/refs/heads/v5/shadowsock
 # Replace luci-theme-argon
 rm -rfv feeds/luci/themes/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+
+# Replace natmap
+rm -rfv feeds/packages/net/natmap
+git clone --depth 1 https://github.com/muink/openwrt-natmapt package/natmapt
+git clone --depth 1 https://github.com/muink/luci-app-natmapt package/luci-app-natmapt
+
+# Remove dns2socks-rust & v2raya
+rm -rfv feeds/helloworld/dns2socks-rust
+rm -rfv feeds/helloworld/v2raya
 
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 
