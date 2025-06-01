@@ -11,17 +11,9 @@
 name: Build mt7981
 
 on:
-  repository_dispatch:
   workflow_dispatch:
-    inputs:
-      Cache:
-        description: 'Using cache to speed up OpenWrt compilation.'
-        required: true
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
+  schedule:
+    - cron: '4 2 */7 * *'
 
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
