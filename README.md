@@ -1,8 +1,9 @@
-# Github Actions ImmortalWrt 360T7&WR30U
+# Github Actions ImmortalWrt WR30U
 
-- ImmortalWrt源码是[hanwckf/immortalwrt-mt798x](https://github.com/hanwckf/immortalwrt-mt798x)，MTK SDK，[作者介绍](https://cmi.hanwckf.top/p/immortalwrt-mt798x)。
+- ImmortalWrt源码是[237大佬的24.10](https://github.com/padavanonly/immortalwrt-mt798x-24.10)。
 - Github Actions来自于[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)，[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。
-- 编译目标为360 T7/T7U/T7M & WR30U/T/M
+- 编译目标为WR30U
+- 主要集成：homeproxy+uu加速器
 
 ## Config文件生成参考
 
