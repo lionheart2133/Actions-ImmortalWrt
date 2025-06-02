@@ -50,6 +50,7 @@ git clone --depth 1 https://github.com/muink/luci-app-natmapt.git package/luci-a
 
 #UU加速器
 git clone --depth=1 https://github.com/datouha/uugamebooster package/uugamebooster
+git clone --depth=1 https://github.com/kiddin9/luci-app-uugamebooster package/luci-app-uugamebooster
 
 # Remove dns2socks-rust & v2raya
 rm -rfv feeds/helloworld/dns2socks-rust
