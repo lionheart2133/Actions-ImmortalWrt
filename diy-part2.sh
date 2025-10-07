@@ -48,9 +48,12 @@ git clone --depth 1 https://github.com/muink/openwrt-natmapt.git package/natmapt
 git clone --depth 1 https://github.com/muink/openwrt-stuntman.git package/stuntman
 git clone --depth 1 https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
 
-#UU加速器
+# UU加速器
 git clone --depth=1 https://github.com/datouha/uugamebooster package/uugamebooster
 git clone https://github.com/kiddin9/luci-app-uugamebooster package/luci-app-uugamebooster
+
+# homeproxy
+git clone --depth=1 https://github.com/immortalwrt/homeproxy
 
 # Remove dns2socks-rust & v2raya
 rm -rfv feeds/helloworld/dns2socks-rust
