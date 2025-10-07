@@ -1,5 +1,5 @@
 # Github Actions ImmortalWrt WR30U
-- fork自[这个项目]((https://github.com/Ljzkirito/Actions-ImmortalWrt)。搞不懂github的机制所以断了fork链以便自己随意修改。
+- fork自[这个项目](https://github.com/Ljzkirito/Actions-ImmortalWrt)。搞不懂github的机制所以断了fork链以便自己随意修改。
 - ImmortalWrt源码是[237大佬的24.10](https://github.com/padavanonly/immortalwrt-mt798x-24.10)。
 - Github Actions来自于[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)，[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。
 - 编译目标为WR30U
