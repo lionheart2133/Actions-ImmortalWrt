@@ -1,9 +1,13 @@
 # Github Actions ImmortalWrt WR30U
-
+- fork自[这个项目]([https://github.com/padavanonly/immortalwrt-mt798x-24.10](https://github.com/Ljzkirito/Actions-ImmortalWrt)。搞不懂github的机制所以断了fork链以便自己随意修改。
 - ImmortalWrt源码是[237大佬的24.10](https://github.com/padavanonly/immortalwrt-mt798x-24.10)。
 - Github Actions来自于[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)，[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。
 - 编译目标为WR30U
 - 主要集成：homeproxy+uu加速器
+
+恩山237大佬的wr30u固件就挺好用的了，唯一蛋疼的问题就是编译的时候少了uu加速器需要的那几个依赖，索性我才折腾出这个项目的。
+目前我个人已稳定使用5个月，uu加速器在5月编译时是没有界面的(luci-app-uugamebooster)，在路由器后台根据[官方教程](https://router.uu.163.com/app/html/online/baike_share.html?baike_id=5f963c9304c215e129ca40e8)进行了重新安装，稀里糊涂就有了。
+后面修改了config加上了luci-app-uugamebooster，但5月版本一直很稳定，没断流，千兆也一直能跑满，homeproxy也整挺好，就没换过固件。后面编译的版本都是同步上游的定时编译，本人纯小白，没有解决问题的能力，如有相关问题需自行解决。
 
 ## Config文件生成参考
 
